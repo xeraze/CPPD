@@ -1,30 +1,28 @@
 
 # CPPD
 
-## Web-Center for the Preparation of Procedural Documents
+## Center for the Preparation of Procedural Documents
 
 <div align="center">
   <img src="assets/demo.png" alt="CPPD Preview" width="960" />
 </div>
 
-A lightweight procedural document generator prototype built for a roleplay-oriented front-end workflow. The project focuses on a structured document form, document preview, and static UI logic without a backend or production authentication layer.
+A lightweight prototype for generating procedural documents, created for a working front-end process oriented towards role-playing games. The project focuses on a structured document form, document preview and static user interface logic, without a backend or production-level authentication.
 
 ---
 
 ## Overview
 
-**CPPD (Center for the Preparation of Procedural Documents)** is a static frontend concept for procedural document generation in a police/official-document context. It is designed as a compact single-page system with templated document outputs, controlled form states, and a final print/export flow.
-
-This repository is provided for portfolio review and reference.
+**CPPD (Centre for the Preparation of Procedural Documents)** is a concept for a static interface used to generate procedural documents in the context of police work and official document management. The system has been developed as a compact, single-page application with the ability to create documents based on templates, manage form statuses and carry out the final stage of printing or exporting.
 
 ## Key features
 
-- Document template flow
-- Structured procedural form fields
-- Dynamic content switching by document type
-- Preview-oriented document layout
+- Document template workflow
+- Structured fields in procedural forms
+- Dynamic content switching based on document type
+- Document layout optimized for preview
 - Local static deployment
-- Print/export friendly presentation
+- Easy-to-print and export view
 
 ## Stack
 
@@ -33,18 +31,18 @@ This repository is provided for portfolio review and reference.
 - JavaScript (ES6+)
 - Web Crypto API
 - Static frontend architecture
-- No production backend / no real auth system
+- No backend
 
 ---
 
 ## Licensing status
 
-This project is published under the PolyForm Noncommercial License 1.0.0 — see [LICENSE](LICENSE) for full terms and Required Notice.
+This project is published under the PolyForm 1.0.0 non-commercial license—see the [LICENSE](LICENSE) for the full text of the terms and the required notice.
 
-- Permitted: viewing, personal and noncommercial use, and use by noncommercial organizations as defined by the license.
-- Prohibited: commercial use, sublicensing, or redistribution for commercial purposes without a separate commercial license from the author.
+- Permitted: viewing, personal and non-commercial use, as well as use by non-commercial organizations as defined in the license.
+- Prohibited: commercial use, sublicensing, or distribution for commercial purposes without a separate commercial license granted by the author.
 
-To request a commercial or proprietary license, contact the author.
+To receive a commercial or proprietary license, please contact the author.
 
 ---
 
