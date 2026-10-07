@@ -134,6 +134,13 @@ button, input, textarea, select {
     font-size: 0.92rem;
 }
 
+/* Make inline links inside support-message visually fit the theme */
+.support-message a {
+    color: #93c5fd;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
 #main-app {
     width: 100%;
     height: 100%;
