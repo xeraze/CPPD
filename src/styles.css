@@ -113,6 +113,13 @@ button, input, textarea, select {
     text-align: center;
 }
 
+.password-error {
+    margin-top: 0.6rem;
+    color: #fecaca;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
 .support-message strong {
     display: block;
     margin-bottom: 0.4rem;

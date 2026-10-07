@@ -1,4 +1,5 @@
-const PASS_HASH = '4076a79015db32111aa068080a8680e8a0a9c5eb5e59a2a9e8f8aa578e3b32fa';
+// Placeholder password for future change — replace before public release
+const PASS = 'CHANGE_ME';
 let generatedOTP = '';
 
 function formatHashHex(buffer) {
@@ -13,10 +14,7 @@ async function hashValue(value) {
 }
 
 async function verifyPassword(inputValue) {
-    if (!window.crypto || !window.crypto.subtle) {
-        return false;
-    }
-    return (await hashValue(inputValue)) === PASS_HASH;
+    return inputValue === PASS;
 }
 
 function initializeSystemDefaults() {
@@ -182,15 +180,26 @@ function showUnsupportedState(message) {
 async function login() {
     const passwordField = document.getElementById('password-input');
     const value = passwordField.value.trim();
+    const pwErrorEl = document.getElementById('password-error');
+    if (pwErrorEl) pwErrorEl.classList.add('hidden');
+
     if (!value) {
-        showUnsupportedState('Будь ласка, введіть пароль для перевірки доступу до сервісу.');
+        if (pwErrorEl) {
+            pwErrorEl.textContent = 'Будь ласка, введіть пароль.';
+            pwErrorEl.classList.remove('hidden');
+        }
         return;
     }
 
     if (await verifyPassword(value)) {
+        // Correct password: show central technical-mode notice (access blocked)
         showUnsupportedState('Сайт XDEVS зараз тимчасово не підтримується. Доступ до конструктора документів заблоковано до відновлення сервісу.');
     } else {
-        showUnsupportedState('Невірний пароль доступу. Сайт XDEVS переведено в технічний режим, тому доступ до конструктора документів наразі обмежено.');
+        // Incorrect password: only show inline error, do not trigger central technical notice
+        if (pwErrorEl) {
+            pwErrorEl.textContent = 'Невірний пароль доступу.';
+            pwErrorEl.classList.remove('hidden');
+        }
     }
 }
 
@@ -244,6 +253,16 @@ function init() {
         }
     });
 
+    // Hide inline password error when user types
+    const pwEl = document.getElementById('password-input');
+    const pwErrorEl = document.getElementById('password-error');
+    if (pwEl && pwErrorEl) {
+        pwEl.addEventListener('input', function () {
+            pwErrorEl.classList.add('hidden');
+            pwErrorEl.textContent = '';
+        });
+    }
+
     document.getElementById('otp-input').addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             verify();
@@ -272,6 +291,8 @@ function init() {
     document.getElementById('support-state').classList.add('hidden');
     document.getElementById('main-app').classList.add('hidden');
     document.getElementById('auth-screen').classList.remove('hidden');
+    // Show central technical-mode notice immediately (site unavailable)
+    showUnsupportedState('Сайт XDEVS зараз тимчасово не підтримується. Доступ до конструктора документів тимчасово закрито.');
     updateDoc();
 }
 

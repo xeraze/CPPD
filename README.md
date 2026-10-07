@@ -1,10 +1,10 @@
 
-# CPPD NPU
+# CPPD
 
 ## Web-Center for the Preparation of Procedural Documents
 
 <div align="center">
-  <img src="assets/demo.png" alt="CPPD NPU preview" width="960" />
+  <img src="assets/demo.png" alt="CPPD Preview" width="960" />
 </div>
 
 A lightweight procedural document generator prototype built for a roleplay-oriented front-end workflow. The project focuses on a structured document form, document preview, and static UI logic without a backend or production authentication layer.
@@ -34,21 +34,6 @@ This repository is provided for portfolio review and reference.
 - Web Crypto API
 - Static frontend architecture
 - No production backend / no real auth system
-
-## Project structure
-
-```text
-CPPD-NPU/
-├── assets/
-│   └── demo.png
-├── gerb.gif
-├── index.html
-├── styles.css
-├── script.js
-├── .gitignore
-├── LICENSE
-└── README.md
-```
 
 ---
 

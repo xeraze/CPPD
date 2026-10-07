@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="tech-support-banner" class="tech-banner" aria-live="polite">
-        <strong>Технічний режим</strong><br>
-        Сайт працює в обмеженому режимі. Можуть виникати незначні помилки або тимчасові збої під час заповнення документів.
-    </div>
+    <!-- corner tech banner removed; central support-state will show when appropriate -->
 
     <div id="auth-screen">
         <div class="auth-card">
@@ -26,6 +23,7 @@
                 <label class="field-label primary" style="display:block; margin-bottom:10px; color:#cbd5e1;">Пароль доступу до порталу:</label>
                 <input type="password" id="password-input" class="auth-input" placeholder="••••••••">
                 <button class="auth-button primary" onclick="login()" style="margin-top:20px;">Увійти</button>
+                <div id="password-error" class="password-error hidden" aria-live="polite"></div>
             </div>
 
             <div id="otp-step" class="hidden">
