@@ -166,7 +166,8 @@ function updateDoc() {
 function showUnsupportedState(message) {
     const supportState = document.getElementById('support-state');
     if (supportState) {
-        supportState.innerHTML = `<strong>Технічний режим</strong><p>${message}</p>`;
+        // Do not overwrite existing markup — preserve the static HTML content
+        // (which contains the desired "Доступ обмежено" text and README link).
         supportState.classList.remove('hidden');
     }
 
